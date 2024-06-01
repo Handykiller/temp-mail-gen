@@ -19,9 +19,9 @@
         function copyEmail() {
             const email = document.getElementById("email").innerText;
             navigator.clipboard.writeText(email).then(() => {
-                alert("Email copied to clipboard!");
+                alert("Copied!");
             }).catch(err => {
-                console.error("Failed to copy email: ", err);
+                console.error("Failed to copy: ", err);
             });
         }
     </script>
