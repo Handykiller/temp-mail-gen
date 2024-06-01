@@ -6,15 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Temporary Email</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <h2>Under Maintainance.....!!!</h2>
+    <h2>Under Maintenance.....!!!</h2>
     <div class="container">
         <h1>Temp Mail Generator</h1>
-        <p>Your Temp Mail is: <span id="email"></span></p>
+        <p>Your Temp Mail is: <span id="email"></span> <i id="copy-icon" class="fas fa-copy" onclick="copyEmail()"></i></p>
         <button onclick="generateEmail()">Generate Mail</button>
     </div>
-
+    <script>
+        function copyEmail() {
+            const email = document.getElementById("email").innerText;
+            navigator.clipboard.writeText(email).then(() => {
+                alert("Email copied to clipboard!");
+            }).catch(err => {
+                console.error("Failed to copy email: ", err);
+            });
+        }
+    </script>
     <script src="script.js"></script>
 </body>
 </html>
